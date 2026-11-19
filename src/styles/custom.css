@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "Doner";
+  src: url(../fonts/Doner-ExtraBoldDisplay.woff);
+  font-weight: var(--font-weight-extrabold);
+}
+@font-face {
+  font-family: "Doner";
+  src: url(../fonts/Doner-MediumDisplay.woff);
+  font-weight: var(--font-weight-bold);
+}
+@font-face {
+  font-family: "Fashion";
+  src: url(../fonts/FashionExperiment.woff);
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Font family */
+  --font-family-headline: "Doner", sans-serif;
+  --font-family-regular: "Roboto", sans-serif;
+
+  /* Font size */
+  --display-large-size: 72px;
+  --display-medium-size: 56px;
+  --display-medium-size: 48px;
+
+  --headline-large-size: 40px;
+  --headline-medium-size: 32px;
+  --headline-small-size: 24px;
+
+  --title-large-size: 24px;
+  --title-medium-size: 20px;
+  --title-small-size: 16px;
+
+  --label-large-size: 18px;
+  --label-medium-size: 16px;
+  --label-small-size: 14px;
+
+  --body-large-size: 16px;
+  --body-medium-size: 14px;
+  --body-small-size: 12px;
+
+  --caption-large-size: 12px;
+  --caption-medium-size: 10px;
+  --caption-small-size: 8px;
+
+  /* Font weight  */
+  --font-weight-extrabold: 700;
+  --font-weight-bold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+
+  /* line height */
+  --display-large-lineheight: 64px;
+  --display-medium-lineheight: 52px;
+  --display-medium-lineheight: 44px;
+
+  --headline-large-lineheight: 40px;
+  --headline-medium-lineheight: 36px;
+  --headline-small-lineheight: 32px;
+
+  --title-large-lineheight: 28px;
+  --title-medium-lineheight: 24px;
+  --title-small-lineheight: 20px;
+
+  --label-large-lineheight: 20px;
+  --label-medium-lineheight: 16px;
+  --label-small-lineheight: 16px;
+
+  --body-large-lineheight: 24px;
+  --body-medium-lineheight: 20px;
+  --body-small-lineheight: 16px;
+
+  --caption-large-lineheight: 16px;
+  --caption-medium-lineheight: 14px;
+  --caption-small-lineheight: 12px;
+
+  /* Letter spacing */
+  --ls-normal: 0;
+  --ls-2xs: 0.002em;
+  --ls-xs: 0.0025em;
+  --ls-sm: 0.004em;
+  --ls-md: 0.005em;
+  --ls-lg: 0.006em;
+  --ls-xl: 0.007em;
+  --ls-2xl: 0.01em;
+
+  /* Colors */
+  --color-violet-50: rgb(241, 239, 255);
+  --color-violet-100: rgb(228, 223, 255);
+  --color-violet-200: rgb(198, 187, 255);
+  --color-violet-300: rgb(173, 154, 255);
+  --color-violet-400: rgb(146, 116, 255);
+  --color-violet-500: rgb(123, 75, 255);
+  --color-violet-600: rgb(103, 0, 254);
+  --color-violet-700: rgb(79, 0, 200);
+  --color-violet-800: rgb(54, 0, 142);
+  --color-violet-900: rgb(33, 0, 94);
+
+  --color-lime-50: rgb(247, 255, 237);
+  --color-lime-100: rgb(239, 255, 216);
+  --color-lime-200: rgb(223, 255, 168);
+  --color-lime-300: rgb(198, 254, 11);
+  --color-lime-400: rgb(194, 248, 11);
+  --color-lime-500: rgb(189, 242, 10);
+  --color-lime-600: rgb(146, 188, 6);
+  --color-lime-700: rgb(106, 137, 3);
+  --color-lime-800: rgb(70, 92, 1);
+  --color-lime-900: rgb(36, 48, 0);
+
+  --color-sky-50: rgb(240, 248, 252);
+  --color-sky-100: rgb(230, 243, 251);
+  --color-sky-200: rgb(203, 231, 247);
+  --color-sky-300: rgb(174, 219, 242);
+  --color-sky-400: rgb(134, 205, 238);
+  --color-sky-500: rgb(110, 193, 228);
+  --color-sky-600: rgb(84, 150, 178);
+  --color-sky-700: rgb(62, 113, 134);
+  --color-sky-800: rgb(39, 75, 90);
+  --color-sky-900: rgb(19, 40, 50);
+
+  --color-grey-50: rgb(246, 246, 247);
+  --color-grey-100: rgb(238, 238, 239);
+  --color-grey-200: rgb(221, 220, 224);
+  --color-grey-300: rgb(207, 206, 211);
+  --color-grey-400: rgb(191, 189, 196);
+  --color-grey-500: rgb(175, 173, 181);
+  --color-grey-600: rgb(138, 135, 147);
+  --color-grey-700: rgb(103, 100, 114);
+  --color-grey-800: rgb(67, 65, 75);
+  --color-grey-900: rgb(36, 35, 41);
+
+  --color-error-50: rgb(252, 241, 241);
+  --color-error-100: rgb(248, 227, 226);
+  --color-error-200: rgb(243, 199, 197);
+  --color-error-300: rgb(238, 171, 166);
+  --color-error-400: rgb(234, 140, 132);
+  --color-error-500: rgb(231, 106, 92);
+  --color-error-600: rgb(193, 76, 61);
+  --color-error-700: rgb(145, 55, 44);
+  --color-error-800: rgb(101, 36, 28);
+  --color-error-900: rgb(60, 18, 13);
+
+  --color-base-black: rgb(026, 026, 026);
+  --color-base-white: rgb(255, 255, 255);
+
+  --color-gradient-violet: linear-gradient(90deg, rgb(123, 75, 255) 27%, rgb(223, 211, 255) 100%);
+
+  /* Elevation */
+  --elevation-color: rgb(0, 0, 0);
+
+  --elevation-1: 0px 1px 2px 0px rgba(var(--shadow-color), 0.3), 0px 1px 3px 1px rgba(var(--shadow-color), 0.15);
+  --elevation-2: 0px 1px 2px 0px rgba(var(--shadow-color), 0.3), 0px 2px 6px 2px rgba(var(--shadow-color), 0.15);
+  --elevation-3: 0px 1px 3px 0px rgba(var(--shadow-color), 0.3), 0px 4px 8px 3px rgba(var(--shadow-color), 0.15);
+  --elevation-4: 0px 2px 3px 0px rgba(var(--shadow-color), 0.3), 0px 6px 10px 4px rgba(var(--shadow-color), 0.15);
+  --elevation-5: 0px 4px 4px 0px rgba(var(--shadow-color), 0.3), 0px 8px 12px 6px rgba(var(--shadow-color), 0.15);
+
+  /* Border radius */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-s: 8px;
+  --radius-md: 12px;
+  --radius-l: 16px;
+  --radius-l-inc: 20px;
+  --radius-xl: 28px;
+  --radius-xl-inc: 32px;
+  --radius-xxl: 48px;
+  --radius-full: 9999px;
+
+  /* Border width */
+  --border-none: 0;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+  --border-8: 8px;
+
+  /* Spacing */
+  --space-zero: 0;
+  --space-8: 0.5rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-56: 3.5rem;
+  --space-64: 4rem;
+  --space-72: 4.5rem;
+  --space-80: 5rem;
+  --space-88: 5.5rem;
+  --space-96: 6rem;
+  --space-104: 6.5rem;
+  --space-112: 7rem;
+  --space-120: 7.5rem;
+}
