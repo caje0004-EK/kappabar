@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import Button from "../components/buttons";
+const { img, imgText, emne, titel, text, buttonText, buttonText2 } = Astro.props;
+---
+
+<section class="container grid">
+  <div class="col-12 col-md-6">
+    <Image src={img} alt={imgText} class="rounded-xl" />
+  </div>
+
+  <div class="col-12 col-md-6 col-content-center">
+    <div>
+      <p class="headline-sm text-primary">{emne}</p>
+      <h1 class="display-md text-primary">{titel}</h1>
+    </div>
+    <p class="text-primary">{text}</p>
+    <Button href="#">{buttonText}</Button>
+    <Button href="#">{buttonText2}</Button>
+  </div>
+</section>
+
+<style>
+  section {
+    gap: var(--space-72);
+  }
+</style>
