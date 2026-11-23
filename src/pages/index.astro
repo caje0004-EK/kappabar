@@ -2,7 +2,28 @@
 import "../styles/custom.css";
 import "../styles/struktur.css";
 import "../styles/general.css";
-import  PageLayout from "../layouts/PageLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import BigCard from "../components/BigCard.astro";
+import Cheers from "../assets/img/cheers.webp";
+import TableTopview from "../assets/img/table-topview.webp";
 ---
 
-<PageLayout heading="KAPPA BAR DANMARK | Social Gaming Bar " />
+<PageLayout heading="KAPPA BAR DANMARK | Social Gaming Bar ">
+  <BigCard
+    img={TableTopview}
+    imgText="Bord med kontroller set oppefra"
+    emne="MERE END BARE EN BAR"
+    titel="DIN GAMING BAR"
+    text="Velkommen til KAPPA BAR, baren for social gaming. Hos os kan du kombinere god mad og lækre cocktails med gaming i alle afskygninger. Vi tilbyder alt fra konsolspil til brætspil, så der er noget for enhver smag. Hos KAPPA BAR lægger vi rammerne for en hyggelig aften fyldt med god stemning, grin og lidt venskabelig konkurrence."
+    buttonText="Se aktiviteter"
+    buttonText2="Om konceptet"
+  />
+  <BigCard
+    img={Cheers}
+    imgText="Selskab, der skåler med vin"
+    emne="GRUPPEARRANGEMENTER"
+    titel="MERE END 10?"
+    text="Hvad enten I planlægger firmafest, fødselsdag, polterabend eller bare den ultimative gamingaften for hele venneflokken, skaber Kappa Bar de perfekte rammer. Vi kombinerer det bedste fra e-sport, gaming, mad og kolde drikkevarer, så I kan fokusere 100% på hyggen, fællesskabet og konkurrencen."
+    buttonText="Læs mere"
+  />
+</PageLayout>
