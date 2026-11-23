@@ -1,0 +1,142 @@
+---
+const { variant = 'primary', size = 'large', href } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class={`btn ${variant} ${size}`}>
+    {variant === 'primary' && (
+      <span class="smiley">
+        <img src="/loog-bomærke-kappa.png" alt="" />
+      </span>
+    )}
+    <span class="label"><slot /></span>
+  </a>
+) : (
+  <button class={`btn ${variant} ${size}`}>
+    {variant === 'primary' && (
+      <span class="smiley">
+        <img src="/loog-bomærke-kappa.png" alt="" />
+      </span>
+    )}
+    <span class="label"><slot /></span>
+  </button>
+)}
+
+<style>
+  .btn {
+    position: relative;
+    display: inline-block;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .label {
+    position: relative;
+    z-index: 2;
+    display: block;
+    border-radius: 999px;
+    transition: 0.25s;
+  }
+
+  /* Størrelser */
+  .large .label  { padding: 16px 42px; font-size: 16px; }
+  .medium .label { padding: 12px 32px; font-size: 14px; }
+
+  /* 1. Primary */
+  .primary .label {
+    background: var(--color-violet-500);
+    color: var(--color-base-white);
+    transform-origin: 18px 85%;
+  }
+
+  .primary .smiley {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 14px;
+    background: var(--color-base-white);
+    border: 2px solid var(--color-violet-500);
+    border-radius: 999px;
+  }
+
+  .primary .smiley img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .primary:hover .label { transform: rotate(-22deg); }
+  .primary:focus-visible .label {
+    outline: 2px solid var(--color-violet-200);
+    outline-offset: 3px;
+  }
+  .primary:active .label { transform: rotate(0); }
+
+  /* 2. Secondary */
+  .secondary .label {
+    background: var(--color-violet-500);
+    color: var(--color-base-white);
+  }
+  .secondary:hover .label {
+    background: var(--color-base-white);
+    color: var(--color-violet-500);
+  }
+  .secondary:focus-visible .label {
+    outline: 2px solid var(--color-violet-200);
+    outline-offset: 3px;
+  }
+  .secondary:active .label {
+    background: var(--color-violet-100);
+    color: var(--color-violet-500);
+  }
+
+  /* 3. Tertiary */
+  .tertiary .label {
+    background: var(--color-base-white);
+    color: var(--color-base-black);
+  }
+  .tertiary:hover .label {
+    background: var(--color-base-black);
+    color: var(--color-base-white);
+  }
+  .tertiary:focus-visible .label {
+    outline: 2px solid var(--color-violet-200);
+    outline-offset: 3px;
+  }
+  .tertiary:active .label {
+    background: var(--color-grey-900);
+    color: var(--color-base-white);
+  }
+
+  /* Disabled */
+  .btn:disabled {
+    pointer-events: none;
+  }
+  .btn:disabled .label {
+    background: var(--color-grey-200);
+    color: var(--color-grey-600);
+  }
+</style>
+
+{/* 
+  SÅDAN BRUGER DU BUTTON-KOMPONENTEN:
+  1. Importer den i toppen af din side/komponent:
+     import Button from '../components/Button.astro';
+
+  2. Sæt den ind i din HTML med de props (indstillinger), du har brug for:
+     - variant: 'primary' (standard), 'secondary' eller 'tertiary'
+     - size: 'large' (standard) eller 'medium'
+     - href: Tilføj en sti, hvis knappen skal fungere som et link (<a>)
+
+  Eksempler på brug:
+  <Button>Book bord</Button>
+  <Button href="/menu">Se vores drinks</Button>
+  <Button variant="secondary" size="medium">Tilmeld nyhedsbrev</Button>
+  <Button variant="tertiary" href="/om-os">Læs mere om Kappabar</Button>
+*/}
