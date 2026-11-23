@@ -1,0 +1,65 @@
+---
+const { titel } = Astro.props;
+---
+
+<div class="card relative flex flex-col items-center justify-center gap-sm">
+  <div class="icon">
+    <slot />
+  </div>
+  <p class="title-lg text-primary">{titel}</p>
+  <span class="side-text title-sm absolute text-primary">{titel}</span>
+  <svg class="fifth-element absolute" width="277" height="284" viewBox="0 0 277 284" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.5">
+      <path d="M243.809 182.678L174.988 211.901L104.798 241.702L75.383 172.424L145.572 142.622L214.394 113.401L243.809 182.678ZM214.392 113.399L145.57 142.621L115.962 72.8871L184.784 43.6657L214.392 113.399Z" fill="#AD9AFF" />
+      <rect x="102.328" y="67.3789" width="75.2641" height="75.2641" transform="rotate(66.9944 102.328 67.3789)" fill="#AD9AFF" />
+    </g>
+  </svg>
+</div>
+
+<style>
+  .card {
+    background-color: var(--color-violet-500);
+    width: 270px;
+    height: 142;
+    border-radius: var(--radius-l-inc);
+    overflow: hidden;
+
+    /* gennemsigtig lilla gradient */
+    background: linear-gradient(180deg, rgb(123 75 255 / 0.55) 27%, rgb(173 154 255 / 0.55) 100%);
+
+    /* glass effect */
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+
+    /* lys kant og dybde */
+    border: 2px solid rgb(255 255 255 / 0.3);
+    box-shadow:
+      0 8px 32px rgb(0 0 0 / 0.25),
+      inset 0 1px 0 rgb(255 255 255 / 0.25);
+  }
+
+  .fifth-element {
+    top: -80px;
+    left: -90px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .icon {
+    margin-top: var(--space-16);
+  }
+
+  .side-text {
+    right: var(--space-12, 0.75rem);
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%) rotate(-90deg);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .card:hover .side-text {
+    opacity: 0;
+  }
+</style>

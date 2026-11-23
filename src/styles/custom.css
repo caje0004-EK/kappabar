@@ -145,7 +145,8 @@
   --color-base-black: rgb(026, 026, 026);
   --color-base-white: rgb(255, 255, 255);
 
-  --color-gradient-violet: linear-gradient(90deg, rgb(123, 75, 255) 27%, rgb(223, 211, 255) 100%);
+  --color-gradient-violet100: linear-gradient(180deg, rgb(123, 75, 255) 27%, rgb(223, 211, 255) 100%);
+  --color-gradient-violet300: linear-gradient(180deg, rgb(123, 75, 255) 27%, rgb(173, 154, 255) 100%);
 
   /* Elevation */
   --elevation-color: rgb(0, 0, 0);
