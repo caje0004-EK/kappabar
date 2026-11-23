@@ -1,0 +1,37 @@
+---
+const { social } = Astro.props;
+---
+
+<a href="#" class="text-decoration-none">
+  <div class="container rounded-xl flex flex-col justify-center items-center gap-md">
+    <div class="icon">
+      <slot />
+    </div>
+    <p class="headline-sm text-primary">{social}</p>
+  </div>
+</a>
+
+<style>
+  .container {
+    background: var(--color-gradient-violet300);
+    width: 243px;
+    height: 243px;
+    padding-top: var(--space-32);
+  }
+
+  p::after {
+    content: "\27F6";
+    margin-left: var(--space-8);
+    font-size: 1.1em;
+    transform: translateY(-0.15em);
+    transition: transform 0.25s ease;
+  }
+
+  p {
+    display: inline-flex;
+  }
+
+  p:hover::after {
+    transform: translate(4px, -0.15em);
+  }
+</style>
