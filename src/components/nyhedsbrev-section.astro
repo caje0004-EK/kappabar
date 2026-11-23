@@ -1,0 +1,425 @@
+---
+import "../styles/custom.css";
+---
+
+<section class="newsletter" aria-labelledby="newsletter-title">
+  <div class="newsletter__inner">
+    <header class="newsletter__header">
+      <p>FØLG MED I</p>
+      <h1 id="newsletter-title">OPDATERINGER</h1>
+    </header>
+
+    <div class="newsletter__content">
+      <div class="newsletter__signup">
+        <h2>TILMELD<br />NYHEDSBREV</h2>
+        <p class="newsletter__description">
+          Tilmeld dig KAPPA BARs nyhedsbrev, og få de seneste nyheder direkte i din
+          indbakke. Vi holder dig opdateret om kommende events, gode tilbud, nye
+          spiloplevelser og alt det, der sker hos KAPPA BAR.
+        </p>
+
+        <form class="newsletter__form" method="post">
+          <label class="visually-hidden" for="newsletter-first-name">Fornavn</label>
+          <input
+            id="newsletter-first-name"
+            name="firstName"
+            type="text"
+            autocomplete="given-name"
+            placeholder="Fornavn"
+            required
+          />
+
+          <label class="visually-hidden" for="newsletter-email">E-mail</label>
+          <input
+            id="newsletter-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="E-Mail"
+            required
+          />
+
+          <label class="newsletter__consent">
+            <input name="consent" type="checkbox" required />
+            <span>
+              Jeg accepterer
+              <a href="/vilkar-og-betingelser">vilkår og betingelser</a>
+            </span>
+          </label>
+
+          <button type="button">TILMELD</button>
+        </form>
+      </div>
+
+      <nav class="newsletter__socials" aria-label="Følg KAPPA BAR på sociale medier">
+        <a
+          class="social-card social-card--instagram"
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram"
+        >
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <rect
+              x="14"
+              y="14"
+              width="72"
+              height="72"
+              rx="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="12"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="11"
+            />
+            <circle cx="72" cy="29" r="6" fill="currentColor" />
+          </svg>
+          <span>INSTAGRAM <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a
+          class="social-card social-card--facebook"
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Facebook"
+        >
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M58 91V55h13l2-15H58v-9c0-4 1-7 7-7h9V11c-2 0-8-1-14-1-14 0-23 9-23 24v6H24v15h13v36h21Z"
+            />
+          </svg>
+          <span>FACEBOOK <span aria-hidden="true">→</span></span>
+        </a>
+        
+      </nav>
+    </div>
+  </div>
+</section>
+
+<style>
+  .newsletter {
+    min-height: 100vh;
+    padding: clamp(3rem, 8vw, 7.5rem) var(--space-24);
+    overflow: hidden;
+    background: var(--color-base-black);
+    color: var(--color-base-white);
+  }
+
+  .newsletter__inner {
+    width: min(100%, 1100px);
+    margin-inline: auto;
+  }
+
+  .newsletter__header {
+    margin-bottom: clamp(3rem, 7vw, 7rem);
+    text-align: center;
+  }
+
+  .newsletter__header p {
+    margin: 0;
+    font-family: var(--font-family-regular);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.1;
+  }
+
+  .newsletter__header h1 {
+    margin: 0;
+    font-family: var(--font-family-headline);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+  }
+
+  .newsletter__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 7vw, 6rem);
+  }
+
+  .newsletter__signup h2 {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-family-headline);
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.08;
+  }
+
+  .newsletter__description {
+    max-width: 34rem;
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.9rem, 1.3vw, 1.125rem);
+    line-height: 1.45;
+  }
+
+  .newsletter__form {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .newsletter__form > input {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--color-grey-200);
+    border-radius: var(--radius-md);
+    background: var(--color-base-white);
+    color: var(--color-base-black);
+    font-size: 1rem;
+  }
+
+  .newsletter__form > input::placeholder {
+    color: var(--color-grey-700);
+    opacity: 1;
+  }
+
+  .newsletter__form > input:focus-visible {
+    outline: 3px solid var(--color-violet-300);
+    outline-offset: 2px;
+  }
+
+  .newsletter__consent {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .newsletter__consent input {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: 0 0 auto;
+    accent-color: var(--color-violet-500);
+  }
+
+  .newsletter__consent a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .newsletter__form button {
+    width: min(100%, 16rem);
+    min-height: 3.25rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius-full);
+    background: var(--color-violet-500);
+    color: var(--color-base-white);
+    font-family: var(--font-family-regular);
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  .newsletter__form button:hover {
+    background: var(--color-base-white);
+    color: var(--color-violet-500);
+  }
+
+  .newsletter__form button:focus-visible,
+  .newsletter__socials a:focus-visible {
+    outline: 3px solid var(--color-violet-200);
+    outline-offset: 4px;
+  }
+
+  .newsletter__socials {
+    position: relative;
+    min-height: 31rem;
+  }
+
+  .social-card {
+    position: absolute;
+    display: flex;
+    width: clamp(9.5rem, 18vw, 13rem);
+    aspect-ratio: 1 / 1.08;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--radius-xl);
+    background: var(--color-gradient-violet);
+    color: var(--color-base-white);
+    transition: transform 200ms ease;
+  }
+
+  .social-card:hover {
+    transform: translateY(-0.4rem) rotate(0);
+  }
+
+  .social-card svg {
+    width: 62%;
+    height: auto;
+  }
+
+  .social-card > span {
+    align-self: stretch;
+    font-family: var(--font-family-regular);
+    font-size: clamp(0.75rem, 1.25vw, 1rem);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .social-card--instagram {
+    top: 0;
+    right: 12%;
+    transform: rotate(-13deg);
+  }
+
+  .social-card--facebook {
+    top: 36%;
+    right: 0;
+    transform: rotate(-7deg);
+  }
+
+  .social-card--tiktok {
+    top: 48%;
+    left: 3%;
+    transform: rotate(-10deg);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 1023px) {
+    .newsletter {
+      padding-inline: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .newsletter__content {
+      grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.85fr);
+      gap: 2rem;
+    }
+
+    .newsletter__socials {
+      min-height: 34rem;
+    }
+
+    .social-card {
+      width: clamp(10rem, 27vw, 15rem);
+    }
+
+    .social-card--instagram {
+      top: 0;
+      right: 12%;
+    }
+
+    .social-card--facebook {
+      top: 45%;
+      right: 3%;
+    }
+
+    .social-card--tiktok {
+      display: none;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .newsletter {
+      min-height: 100vh;
+      padding: 3rem clamp(1.25rem, 8.5vw, 2.75rem) 4rem;
+    }
+
+    .newsletter__header {
+      margin-bottom: 3rem;
+    }
+
+    .newsletter__header p {
+      font-size: clamp(1.65rem, 6vw, 2rem);
+    }
+
+    .newsletter__header h1 {
+      font-size: clamp(2.5rem, 9vw, 3.25rem);
+    }
+
+    .newsletter__content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .newsletter__signup h2 {
+      font-size: clamp(1.8rem, 7vw, 2.2rem);
+    }
+
+    .newsletter__description {
+      font-size: 1rem;
+    }
+
+    .newsletter__form {
+      gap: 1.1rem;
+    }
+
+    .newsletter__form > input {
+      min-height: 4rem;
+      padding-inline: 1.1rem;
+      border-radius: var(--radius-xl);
+      font-size: 1.25rem;
+    }
+
+    .newsletter__consent {
+      font-size: 1rem;
+    }
+
+    .newsletter__consent input {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    .newsletter__form button {
+      width: 100%;
+      min-height: 3.25rem;
+      font-size: 1.35rem;
+    }
+
+    .newsletter__socials {
+      display: grid;
+      min-height: 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .social-card {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      width: 100%;
+      max-width: 13rem;
+      justify-self: center;
+      aspect-ratio: 1 / 1.08;
+    }
+
+    .social-card--instagram {
+      transform: rotate(-10deg);
+    }
+
+    .social-card--facebook {
+      transform: rotate(5deg);
+    }
+
+    .social-card--tiktok {
+      display: none;
+    }
+
+    .social-card > span {
+      font-size: clamp(0.7rem, 3vw, 0.9rem);
+    }
+  }
+</style>
