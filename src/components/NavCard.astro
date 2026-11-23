@@ -50,13 +50,13 @@ const { titel } = Astro.props;
   }
 
   .side-text {
-    right: var(--space-12, 0.75rem);
     top: 50%;
-    right: -30px;
-    transform: translateY(-50%) rotate(-90deg);
+    right: 8px;
+    transform: translateY(-50%) rotate(-180deg);
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
+    writing-mode: vertical-rl;
   }
 
   .card:hover .side-text {
