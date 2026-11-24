@@ -1,0 +1,316 @@
+
+---
+import Phone from "../assets/img/iPhone.png";
+import AppStore from "../assets/svg/Appstore.svg";
+import GooglePlay from "../assets/svg/Googleplay.svg";
+import PixelBackground from "../assets/svg/pixelBg.svg";
+import PixelBackgroundResponsive from "../assets/svg/pixelBg-responsive.svg";
+---
+
+<section class="app-section">
+  <img
+    class="app-background app-background-desktop"
+    src={PixelBackground.src}
+    alt=""
+    aria-hidden="true"
+  />
+
+  <img
+    class="app-background app-background-responsive"
+    src={PixelBackgroundResponsive.src}
+    alt=""
+    aria-hidden="true"
+  />
+
+  <div class="app-container">
+
+    <div class="app-content">
+      <span class="app-label">KAPPA APP</span>
+      <h2>OPTJEN POINT</h2>
+      <p>
+        Med vores KAPPA-app får du endnu mere ud af dit besøg.
+        Hver gang du handler hos os, optjener du point, som kan bruges
+        til at få rabatter på både mad, drinks og spilaktiviteter.
+        Jo mere du besøger os, jo flere fordele får du. Det er vores
+        måde at belønne dig for at være en del af KAPPA-fællesskabet på.
+        Download appen, optjen point, og få endnu mere ud af din næste
+        KAPPA-oplevelse!
+      </p>
+      <div class="app-downloads">
+        <a href="#" aria-label="Download i App Store">
+          <img src={AppStore.src} alt="App Store" />
+        </a>
+
+        <a href="#" aria-label="Download på Google Play">
+          <img src={GooglePlay.src} alt="Google Play" />
+        </a>
+      </div>
+    </div>
+
+    <div class="app-divider"></div>
+
+    <div class="app-phone">
+      <img
+        src={Phone.src}
+        alt="KAPPA BAR app vist på en smartphone"
+      />
+    </div>
+
+  </div>
+</section>
+
+<style>
+.app-section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: auto;
+  padding: 0 5% 40px;
+  background: transparent;
+  overflow: visible;
+}
+
+.app-background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.app-background-desktop {
+  display: none;
+}
+
+.app-background-responsive {
+  display: block;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "content"
+    "phone";
+  gap: 0;
+}
+
+
+.app-content {
+  grid-area: content;
+  position: relative;
+  z-index: 2;
+  color: white;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 205px 20px 35px;
+  text-align: left;
+}
+
+.app-label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.app-content h2 {
+  font-size: clamp(32px, 7vw, 44px);
+  line-height: 0.95;
+  margin: 0 0 18px;
+  font-weight: 800;
+}
+
+.app-content p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 100%;
+}
+
+.app-downloads {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.app-downloads a {
+  display: block;
+  width: 42px;
+  height: 42px;
+}
+
+.app-downloads img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.app-phone {
+  grid-area: phone;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: -10px;
+}
+
+.app-phone img {
+  display: block;
+  width: 75%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+}
+
+.app-divider {
+  display: none;
+}
+
+@media (min-width: 760px) and (max-width: 1023px) {
+
+  .app-section {
+    padding: 0 8% 70px;
+    min-height: auto;
+  }
+
+  .app-container {
+    max-width: 650px;
+    gap: 0;
+  }
+
+  .app-content {
+    width: 100%;
+    max-width: 530px;
+    margin: 0 auto;
+    padding: 255px 35px 40px;
+    text-align: left;
+  }
+
+  .app-content h2 {
+    font-size: 52px;
+  }
+
+  .app-content p {
+    font-size: 14px;
+  }
+
+  .app-downloads {
+    margin-top: 16px;
+  }
+
+  .app-phone {
+    margin-top: -10px;
+  }
+
+  .app-phone img {
+    width: 65%;
+    max-width: 380px;
+    transform: rotate(12deg);
+  }
+
+  .app-divider {
+    display: none;
+  }
+}
+
+
+@media (min-width: 1024px) {
+
+  .app-section {
+    width: 100%;
+    min-height: 550px;
+    padding: 70px 5%;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .app-background-desktop {
+    display: block;
+  }
+
+  .app-background-responsive {
+    display: none;
+  }
+
+  .app-background {
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+
+  .app-container {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 3px 1fr;
+    grid-template-areas:
+      "phone divider content";
+    gap: 45px;
+    align-items: center;
+  }
+
+  .app-phone {
+    grid-area: phone;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .app-phone img {
+    width: 100%;
+    max-width: 360px;
+    transform: rotate(-13deg);
+  }
+
+  .app-divider {
+    display: block;
+    grid-area: divider;
+    width: 3px;
+    height: 260px;
+    background: white;
+    border-radius: 5px;
+  }
+
+  .app-content {
+    grid-area: content;
+    max-width: 500px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-label {
+    font-size: 15px;
+  }
+
+  .app-content h2 {
+    font-size: clamp(45px, 4vw, 65px);
+    margin-bottom: 20px;
+  }
+
+  .app-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .app-downloads {
+    margin-top: 18px;
+  }
+}
+</style>

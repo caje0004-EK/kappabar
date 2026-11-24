@@ -1,0 +1,166 @@
+
+---
+import EventCard from "./EventCard.astro";
+
+import TCGImage from "../assets/img/TCG.webp";
+import DFGImage from "../assets/img/DFA.jpeg";
+import SITSImage from "../assets/img/SITS.jpg";
+
+import Date1 from "../assets/svg/Date1.svg";
+import Date2 from "../assets/svg/Date2.svg";
+import Date3 from "../assets/svg/Date3.svg";
+---
+
+<div class="event-stack">
+  <div class="stack-card card-back">
+    <EventCard
+      title="TCG SUNDAY"
+      label="Quizafternoon"
+      image={TCGImage.src}
+      dateImage={Date1.src}
+    />
+  </div>
+
+  <div class="stack-card card-middle">
+    <EventCard
+      title="DRENGENE FRA ANGORA"
+      label="Quizaften"
+      image={DFGImage.src}
+      dateImage={Date2.src}
+    />
+  </div>
+
+  <div class="stack-card card-front">
+    <EventCard
+      title="SEX AND THE CITY"
+      label="Quizaften"
+      image={SITSImage.src}
+      dateImage={Date3.src}
+    />
+  </div>
+</div>
+
+<style>
+
+.event-stack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.8 / 1;
+  margin: 0 auto;
+}
+
+.stack-card {
+  position: absolute;
+  width: 85%;
+  left: 0;
+  transform-origin: center center;
+  transition:
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    top 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    left 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.card-back {
+  top: 0;
+  left: 12%;
+  z-index: 1;
+}
+
+.card-middle {
+  top: 6%;
+  left: 6%;
+  z-index: 2;
+}
+
+.card-front {
+  top: 12%;
+  left: 0;
+  z-index: 3;
+}
+
+.stack-card.is-lifting {
+  z-index: 4;
+  transform: translateY(-90%) rotate(12deg) scale(0.95);
+}
+
+@media (max-width: 960px) {
+  .event-stack {
+    aspect-ratio: 1.6 / 1;
+  }
+
+  .stack-card {
+    width: 90%;
+  }
+
+  .card-back {
+    left: 10%;
+  }
+
+  .card-middle {
+    left: 5%;
+  }
+
+  .card-front {
+    left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .event-stack {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .stack-card {
+    width: 100%;
+  }
+
+  .card-back {
+    top: 0;
+    left: 0;
+  }
+
+  .card-middle {
+    top: 7%;
+    left: 0;
+  }
+
+  .card-front {
+    top: 14%;
+    left: 0;
+  }
+}
+</style>
+
+<script>
+  const stack = document.querySelector(".event-stack");
+
+  if (stack) {
+    const back = stack.querySelector(".card-back");
+    const middle = stack.querySelector(".card-middle");
+    const front = stack.querySelector(".card-front");
+
+    if (back && middle && front) {
+      let currentBack = back;
+      let currentMiddle = middle;
+      let currentFront = front;
+
+      setInterval(() => {
+        currentFront.classList.add("is-lifting");
+
+        setTimeout(() => {
+          currentFront.classList.replace("card-front", "card-back");
+          currentMiddle.classList.replace("card-middle", "card-front");
+          currentBack.classList.replace("card-back", "card-middle");
+
+          currentFront.classList.remove("is-lifting");
+
+          const oldBack = currentBack;
+          currentBack = currentFront;
+          currentFront = currentMiddle;
+          currentMiddle = oldBack;
+        }, 1400);
+      }, 5000);
+    }
+  }
+</script>
