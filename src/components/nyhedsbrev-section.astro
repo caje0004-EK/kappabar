@@ -1,5 +1,6 @@
 ---
 import "../styles/custom.css";
+import NewsletterForm from "./NewsletterForm.astro";
 ---
 
 <section class="newsletter" aria-labelledby="newsletter-title">
@@ -39,6 +40,7 @@ import "../styles/custom.css";
 
           <button type="button">TILMELD</button>
         </form>
+        <NewsletterForm />
       </div>
 
       <!-- <nav class="newsletter__socials" aria-label="Følg KAPPA BAR på sociale medier">
@@ -277,18 +279,6 @@ import "../styles/custom.css";
     transform: rotate(-10deg);
   }
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
   @media (max-width: 1023px) {
     .newsletter {
       padding-inline: clamp(1.5rem, 4vw, 3rem);
@@ -351,32 +341,6 @@ import "../styles/custom.css";
 
     .newsletter__description {
       font-size: 1rem;
-    }
-
-    .newsletter__form {
-      gap: 1.1rem;
-    }
-
-    .newsletter__form > input {
-      min-height: 4rem;
-      padding-inline: 1.1rem;
-      border-radius: var(--radius-xl);
-      font-size: 1.25rem;
-    }
-
-    .newsletter__consent {
-      font-size: 1rem;
-    }
-
-    .newsletter__consent input {
-      width: 1.4rem;
-      height: 1.4rem;
-    }
-
-    .newsletter__form button {
-      width: 100%;
-      min-height: 3.25rem;
-      font-size: 1.35rem;
     }
 
     .newsletter__socials {

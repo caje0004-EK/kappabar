@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @font-face {
   font-family: "Doner";
   src: url(../fonts/Doner-ExtraBoldDisplay.woff);
@@ -12,7 +14,6 @@
   font-family: "Fashion";
   src: url(../fonts/FashionExperiment.woff);
 }
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   /* Font family */

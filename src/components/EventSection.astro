@@ -2,10 +2,10 @@
 ---
 import EventCardStack from "./EventCardStack.astro";
 import EventsBackground from "../assets/svg/pixelBg.svg";
+import Button from "../components/buttons.astro";
 ---
 
 <div class="events-container">
-
   <img
     class="events-background"
     src={EventsBackground.src}
@@ -20,8 +20,7 @@ import EventsBackground from "../assets/svg/pixelBg.svg";
       med et unikt udvalg af sjove koncepter og udfordringer.
     </p>
     <p>
-      Hver uge stabler vi særlige events på benene, hvor du kan
-      deltage i klassiske pubquizzer og brætspilsaftener.
+      Hver uge stabler vi særlige events på benene, hvor du kan deltage i klassiske pubquizzes og brætspilsaftener – eller step up med vores e-sportsturneringer og temaaftener, som er perfekte til at dyste med dine venner.
     </p>
   </div>
 
@@ -29,30 +28,37 @@ import EventsBackground from "../assets/svg/pixelBg.svg";
     <EventCardStack />
   </div>
 
-  <a class="events-button" href="/events">Se events</a>
+  <Button variant="tertiary" href="/om-os">
+    Se events
+  </Button>
 
 </div>
 
 <style>
+/* =========================
+   MOBILE FIRST
+========================= */
+
 .events-container {
   position: relative;
   isolation: isolate;
   width: 100%;
   margin: 0 auto;
   padding: 50px 5%;
-
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
     "text"
-    "cards"
-    "button";
-
-  gap: 30px;
+    "button"
+    "cards";
+  gap: 20px;
 }
+
 .events-background {
   display: none;
 }
+
+/* TEKST */
 
 .events-text {
   grid-area: text;
@@ -72,28 +78,33 @@ import EventsBackground from "../assets/svg/pixelBg.svg";
   margin-bottom: 20px;
 }
 
+/* EVENTKORT */
+
 .events-cards {
   grid-area: cards;
   width: 100%;
   min-width: 0;
 }
 
-.events-button {
+/* KNAP */
+
+:global(.btn.tertiary) {
   grid-area: button;
-  justify-self: center;
+  justify-self: start;
+  align-self: start;
   display: inline-block;
-  padding: 12px 40px;
-  background: white;
-  color: black;
-  border-radius: 50px;
-  text-decoration: none;
+  margin-top: 0;
 }
 
+
+/*TABLET*/
+
 @media (min-width: 760px) {
+
   .events-container {
-    max-width: 700px;
+    max-width: 750px;
     padding: 70px 5%;
-    gap: 30px;
+    gap: 20px;
   }
 
   .events-text {
@@ -114,7 +125,11 @@ import EventsBackground from "../assets/svg/pixelBg.svg";
   }
 }
 
+
+/*DESKTOP*/
+
 @media (min-width: 1024px) {
+
   .events-container {
     position: relative;
     isolation: isolate;
@@ -126,26 +141,30 @@ import EventsBackground from "../assets/svg/pixelBg.svg";
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     grid-template-areas:
-    "text cards"
-    "button cards";
+      "text cards"
+      "button cards";
     column-gap: 50px;
     row-gap: 5px;
     align-items: center;
   }
 
- .events-background {
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100vw;
-  height: calc(100% + 100px);
-  left: 50%;
-  top: -61px;
-  transform: translateX(-50%);
-  max-width: none;
-  object-fit: fill;
-  pointer-events: none;
-}
+  /* BAGGRUND */
+
+  .events-background {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: calc(100% + 100px);
+    left: 50%;
+    top: -61px;
+    transform: translateX(-50%);
+    max-width: none;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  /* TEKST */
 
   .events-text {
     grid-area: text;
@@ -156,14 +175,17 @@ import EventsBackground from "../assets/svg/pixelBg.svg";
   .events-text h2 {
     text-align: left;
     font-size: clamp(50px, 4vw, 76px);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    padding-top: 20px;
   }
 
   .events-text p {
     text-align: left;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
+
+  /* EVENTKORT */
 
   .events-cards {
     grid-area: cards;
@@ -172,18 +194,12 @@ import EventsBackground from "../assets/svg/pixelBg.svg";
     min-width: 0;
   }
 
-  .events-button {
+  /* KNAP */
+
+  :global(.btn.tertiary) {
     grid-area: button;
     justify-self: start;
     align-self: start;
-    margin-top: -15px;
-    padding: 12px 40px;
-    display: inline-block;
-    background: white;
-    color: black;
-    border-radius: 50px;
-    text-decoration: none;
   }
 }
 </style>
-

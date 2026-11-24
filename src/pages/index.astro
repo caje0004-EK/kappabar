@@ -9,6 +9,8 @@ import TableTopview from "../assets/img/table-topview.webp";
 import HeroUnit from "../components/HeroUnit.astro";
 import SocialCard from "../components/SocialCard.astro";
 import Nyhedsbrev from "../components/nyhedsbrev-section.astro";
+import EventSection from "../components/EventSection.astro";
+import AppSection from "../components/AppSection.astro";
 ---
 
 <PageLayout heading="KAPPA BAR DANMARK | Social Gaming Bar ">
@@ -22,6 +24,7 @@ import Nyhedsbrev from "../components/nyhedsbrev-section.astro";
     buttonText="Se aktiviteter"
     buttonText2="Om konceptet"
   />
+<EventSection/>
   <BigCard
     img={Cheers}
     imgText="Selskab, der skåler med vin"
@@ -76,6 +79,7 @@ import Nyhedsbrev from "../components/nyhedsbrev-section.astro";
       </div>
     </div>
   </section>
+<AppSection/>
 </PageLayout>
 
 <style>
