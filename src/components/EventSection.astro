@@ -1,0 +1,189 @@
+
+---
+import EventCardStack from "./EventCardStack.astro";
+import EventsBackground from "../assets/svg/pixelBg.svg";
+---
+
+<div class="events-container">
+
+  <img
+    class="events-background"
+    src={EventsBackground.src}
+    alt=""
+    aria-hidden="true"
+  />
+
+  <div class="events-text">
+    <h2>EVENTS</h2>
+    <p>
+      Hos Kappa Bar gør vi os umage med at holde stemningen i top
+      med et unikt udvalg af sjove koncepter og udfordringer.
+    </p>
+    <p>
+      Hver uge stabler vi særlige events på benene, hvor du kan
+      deltage i klassiske pubquizzer og brætspilsaftener.
+    </p>
+  </div>
+
+  <div class="events-cards">
+    <EventCardStack />
+  </div>
+
+  <a class="events-button" href="/events">Se events</a>
+
+</div>
+
+<style>
+.events-container {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 5%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "text"
+    "cards"
+    "button";
+
+  gap: 30px;
+}
+.events-background {
+  display: none;
+}
+
+.events-text {
+  grid-area: text;
+  text-align: left;
+}
+
+.events-text h2 {
+  color: white;
+  font-size: clamp(48px, 8vw, 64px);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.events-text p {
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.events-cards {
+  grid-area: cards;
+  width: 100%;
+  min-width: 0;
+}
+
+.events-button {
+  grid-area: button;
+  justify-self: center;
+  display: inline-block;
+  padding: 12px 40px;
+  background: white;
+  color: black;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+@media (min-width: 760px) {
+  .events-container {
+    max-width: 700px;
+    padding: 70px 5%;
+    gap: 30px;
+  }
+
+  .events-text {
+    text-align: center;
+  }
+
+  .events-text h2 {
+    font-size: 60px;
+  }
+
+  .events-text p {
+    text-align: left;
+  }
+
+  .events-cards {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .events-container {
+    position: relative;
+    isolation: isolate;
+    width: 70%;
+    max-width: 1400px;
+    min-height: 650px;
+    margin: 0 auto;
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-areas:
+    "text cards"
+    "button cards";
+    column-gap: 50px;
+    row-gap: 5px;
+    align-items: center;
+  }
+
+ .events-background {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: calc(100% + 100px);
+  left: 50%;
+  top: -61px;
+  transform: translateX(-50%);
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+  .events-text {
+    grid-area: text;
+    text-align: left;
+    align-self: end;
+  }
+
+  .events-text h2 {
+    text-align: left;
+    font-size: clamp(50px, 4vw, 76px);
+    margin-bottom: 25px;
+  }
+
+  .events-text p {
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .events-cards {
+    grid-area: cards;
+    width: 100%;
+    max-width: 800px;
+    min-width: 0;
+  }
+
+  .events-button {
+    grid-area: button;
+    justify-self: start;
+    align-self: start;
+    margin-top: -15px;
+    padding: 12px 40px;
+    display: inline-block;
+    background: white;
+    color: black;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+}
+</style>
+
