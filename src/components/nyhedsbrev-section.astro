@@ -4,40 +4,30 @@ import "../styles/custom.css";
 
 <section class="newsletter" aria-labelledby="newsletter-title">
   <div class="newsletter__inner">
-    <header class="newsletter__header">
+    <!-- <header class="newsletter__header">
       <p>FØLG MED I</p>
       <h1 id="newsletter-title">OPDATERINGER</h1>
-    </header>
+    </header> -->
 
     <div class="newsletter__content">
       <div class="newsletter__signup">
-        <h2>TILMELD<br />NYHEDSBREV</h2>
-        <p class="newsletter__description">
-          Tilmeld dig KAPPA BARs nyhedsbrev, og få de seneste nyheder direkte i din
-          indbakke. Vi holder dig opdateret om kommende events, gode tilbud, nye
-          spiloplevelser og alt det, der sker hos KAPPA BAR.
-        </p>
+        <h2>
+          TILMELD
+          <br />
+          NYHEDSBREV
+        </h2>
+        <p class="newsletter__description">Tilmeld dig KAPPA BARs nyhedsbrev, og få de seneste nyheder direkte i din indbakke. Vi holder dig opdateret om kommende events, gode tilbud, nye spiloplevelser og alt det, der sker hos KAPPA BAR.</p>
 
         <form class="newsletter__form" method="post">
-          <label class="visually-hidden" for="newsletter-first-name">Fornavn</label>
-          <input
-            id="newsletter-first-name"
-            name="firstName"
-            type="text"
-            autocomplete="given-name"
-            placeholder="Fornavn"
-            required
-          />
+          <label class="visually-hidden" for="newsletter-first-name">
+            Fornavn
+          </label>
+          <input id="newsletter-first-name" name="firstName" type="text" autocomplete="given-name" placeholder="Fornavn" required />
 
-          <label class="visually-hidden" for="newsletter-email">E-mail</label>
-          <input
-            id="newsletter-email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            placeholder="E-Mail"
-            required
-          />
+          <label class="visually-hidden" for="newsletter-email">
+            E-mail
+          </label>
+          <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="E-Mail" required />
 
           <label class="newsletter__consent">
             <input name="consent" type="checkbox" required />
@@ -51,7 +41,7 @@ import "../styles/custom.css";
         </form>
       </div>
 
-      <nav class="newsletter__socials" aria-label="Følg KAPPA BAR på sociale medier">
+      <!-- <nav class="newsletter__socials" aria-label="Følg KAPPA BAR på sociale medier">
         <a
           class="social-card social-card--instagram"
           href="https://www.instagram.com/"
@@ -99,7 +89,7 @@ import "../styles/custom.css";
           <span>FACEBOOK <span aria-hidden="true">→</span></span>
         </a>
         
-      </nav>
+      </nav> -->
     </div>
   </div>
 </section>
@@ -215,7 +205,9 @@ import "../styles/custom.css";
     font-size: 1.25rem;
     font-weight: var(--font-weight-bold);
     cursor: pointer;
-    transition: background-color 180ms ease, color 180ms ease;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease;
   }
 
   .newsletter__form button:hover {
