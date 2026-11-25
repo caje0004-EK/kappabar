@@ -4,7 +4,7 @@ import Button from "../components/buttons.astro";
 const { img, imgText, emne, titel, text, buttonText, buttonText2 } = Astro.props;
 ---
 
-<section class="container grid">
+<section class="container col-content-center grid">
   <div class="col-12 col-md-6">
     <Image src={img} alt={imgText} class="rounded-xl" />
   </div>
@@ -25,6 +25,7 @@ const { img, imgText, emne, titel, text, buttonText, buttonText2 } = Astro.props
 <style>
   section {
     gap: var(--space-72);
+    place-self: center;
   }
 
   .buttons {
