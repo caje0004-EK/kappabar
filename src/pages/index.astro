@@ -9,6 +9,8 @@ import TableTopview from "../assets/img/table-topview.webp";
 import HeroUnit from "../components/HeroUnit.astro";
 import EventSection from "../components/EventSection.astro";
 import AppSection from "../components/AppSection.astro";
+import NyhedsbrevSection from "../components/nyhedsbrev-section.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <PageLayout heading="KAPPA BAR DANMARK | Social Gaming Bar ">
@@ -22,7 +24,7 @@ import AppSection from "../components/AppSection.astro";
     buttonText="Se aktiviteter"
     buttonText2="Om konceptet"
   />
-<EventSection/>
+  <EventSection />
   <BigCard
     img={Cheers}
     imgText="Selskab, der skåler med vin"
@@ -31,5 +33,7 @@ import AppSection from "../components/AppSection.astro";
     text="Hvad enten I planlægger firmafest, fødselsdag, polterabend eller bare den ultimative gamingaften for hele venneflokken, skaber Kappa Bar de perfekte rammer. Vi kombinerer det bedste fra e-sport, gaming, mad og kolde drikkevarer, så I kan fokusere 100% på hyggen, fællesskabet og konkurrencen."
     buttonText="Læs mere"
   />
-<AppSection/>
+  <AppSection />
+  <NyhedsbrevSection />
+  <Footer />
 </PageLayout>

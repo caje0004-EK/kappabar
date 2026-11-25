@@ -1,24 +1,28 @@
 ---
-const { variant = 'primary', size = 'large', href } = Astro.props;
+const { variant = "primary", size = "large", href } = Astro.props;
 ---
 
 {href ? (
   <a href={href} class={`btn ${variant} ${size}`}>
-    {variant === 'primary' && (
+    {variant === "primary" && (
       <span class="smiley">
         <img src="/loog-bomærke-kappa.png" alt="" />
       </span>
     )}
-    <span class="label"><slot /></span>
+    <span class="label">
+      <slot />
+    </span>
   </a>
 ) : (
   <button class={`btn ${variant} ${size}`}>
-    {variant === 'primary' && (
+    {variant === "primary" && (
       <span class="smiley">
         <img src="/loog-bomærke-kappa.png" alt="" />
       </span>
     )}
-    <span class="label"><slot /></span>
+    <span class="label">
+      <slot />
+    </span>
   </button>
 )}
 
@@ -43,8 +47,14 @@ const { variant = 'primary', size = 'large', href } = Astro.props;
   }
 
   /* Størrelser */
-  .large .label  { padding: 16px 42px; font-size: 16px; }
-  .medium .label { padding: 12px 32px; font-size: 14px; }
+  .large .label {
+    padding: 10px 52px;
+    font-size: 18px;
+  }
+  .medium .label {
+    padding: 12px 32px;
+    font-size: 14px;
+  }
 
   /* 1. Primary */
   .primary .label {
@@ -71,47 +81,95 @@ const { variant = 'primary', size = 'large', href } = Astro.props;
     height: 30px;
   }
 
-  .primary:hover .label { transform: rotate(-22deg); }
+  .primary:hover .label {
+    transform: rotate(-22deg);
+  }
   .primary:focus-visible .label {
     outline: 2px solid var(--color-violet-200);
     outline-offset: 3px;
   }
-  .primary:active .label { transform: rotate(0); }
+  .primary:active .label {
+    transform: rotate(0);
+  }
 
   /* 2. Secondary */
   .secondary .label {
-    background: var(--color-violet-500);
+    position: relative;
     color: var(--color-base-white);
+    background-color: var(--color-violet-500);
+    overflow: hidden;
+    transition: color 0.6s ease;
   }
-  .secondary:hover .label {
+
+  /* fyldet */
+  .secondary .label::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: var(--color-base-white);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 600ms ease;
+    pointer-events: none;
+  }
+
+  .secondary:hover .label,
+  .secondary:focus-visible .label {
     color: var(--color-violet-500);
   }
+
+  .secondary:hover .label::before,
+  .secondary:focus-visible .label::before {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .secondary:active .label::before {
+    background: var(--color-violet-100);
+  }
+
   .secondary:focus-visible .label {
     outline: 2px solid var(--color-violet-200);
     outline-offset: 3px;
   }
-  .secondary:active .label {
-    background: var(--color-violet-100);
-    color: var(--color-violet-500);
-  }
 
   /* 3. Tertiary */
   .tertiary .label {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background: var(--color-base-white);
     color: var(--color-base-black);
+    transition: color 0.6s ease;
   }
-  .tertiary:hover .label {
+
+  .tertiary .label::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: var(--color-base-black);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 600ms ease;
+    pointer-events: none;
+  }
+
+  .tertiary:hover .label,
+  .tertiary:focus-visible .label {
     color: var(--color-base-white);
   }
+
+  .tertiary:hover .label::before,
+  .tertiary:focus-visible .label::before {
+    clip-path: inset(0 0 0 0); /* fylder hele knappen */
+  }
+
   .tertiary:focus-visible .label {
     outline: 2px solid var(--color-violet-200);
     outline-offset: 3px;
   }
-  .tertiary:active .label {
+
+  .tertiary:active .label::before {
     background: var(--color-grey-900);
-    color: var(--color-base-white);
   }
 
   /* Disabled */
