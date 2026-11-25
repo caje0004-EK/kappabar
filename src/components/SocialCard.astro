@@ -14,8 +14,7 @@ const { social } = Astro.props;
 <style>
   .container {
     background: var(--color-gradient-violet300);
-    width: 243px;
-    height: 243px;
+    min-width: 180px;
     padding-top: var(--space-32);
   }
 
@@ -33,5 +32,19 @@ const { social } = Astro.props;
 
   p:hover::after {
     transform: translate(4px, -0.15em);
+  }
+
+  .icon :global(svg) {
+    height: clamp(5rem, 4rem + 4vw, 9.625rem);
+    width: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  @media (min-width: 800px) {
+    .container {
+      width: 243px;
+      height: 243px;
+    }
   }
 </style>

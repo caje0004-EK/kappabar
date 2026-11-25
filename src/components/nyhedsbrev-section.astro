@@ -1,6 +1,7 @@
 ---
 import "../styles/custom.css";
 import NewsletterForm from "./NewsletterForm.astro";
+import SocialCard from "./SocialCard.astro";
 ---
 
 <section class="newsletter" aria-labelledby="newsletter-title">
@@ -12,18 +13,48 @@ import NewsletterForm from "./NewsletterForm.astro";
 
     <div class="newsletter__content">
       <div class="newsletter__signup">
-        <h2>TILMELD<br />NYHEDSBREV</h2>
-        <p class="newsletter__description">
-          Tilmeld dig KAPPA BARs nyhedsbrev, og få de seneste nyheder direkte i din
-          indbakke. Vi holder dig opdateret om kommende events, gode tilbud, nye
-          spiloplevelser og alt det, der sker hos KAPPA BAR.
-        </p>
+        <h2>
+          TILMELD
+          <br />
+          NYHEDSBREV
+        </h2>
+        <p class="newsletter__description">Tilmeld dig KAPPA BARs nyhedsbrev, og få de seneste nyheder direkte i din indbakke. Vi holder dig opdateret om kommende events, gode tilbud, nye spiloplevelser og alt det, der sker hos KAPPA BAR.</p>
 
         <NewsletterForm />
       </div>
 
       <nav class="newsletter__socials" aria-label="Følg KAPPA BAR på sociale medier">
-        <a
+        <div class="social-card ig">
+          <SocialCard social="INSTAGRAM">
+            <svg viewBox="0 0 154 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M76.8108 51.2091C62.7029 51.2091 51.1899 62.7222 51.1899 76.83C51.1899 90.9378 62.7029 102.451 76.8108 102.451C90.9186 102.451 102.432 90.9378 102.432 76.83C102.432 62.7222 90.9186 51.2091 76.8108 51.2091ZM153.654 76.83C153.654 66.2203 153.75 55.7067 153.155 45.1162C152.559 32.8151 149.753 21.8979 140.757 12.9027C131.743 3.88825 120.845 1.10128 108.544 0.505449C97.9341 -0.0903857 87.4205 0.00571702 76.83 0.00571702C66.2203 0.00571702 55.7067 -0.0903857 45.1162 0.505449C32.8151 1.10128 21.8979 3.90747 12.9027 12.9027C3.88826 21.9171 1.10128 32.8151 0.505449 45.1162C-0.0903857 55.7259 0.00571702 66.2395 0.00571702 76.83C0.00571702 87.4205 -0.0903857 97.9533 0.505449 108.544C1.10128 120.845 3.90748 131.762 12.9027 140.757C21.9171 149.772 32.8151 152.559 45.1162 153.155C55.7259 153.75 66.2395 153.654 76.83 153.654C87.4397 153.654 97.9533 153.75 108.544 153.155C120.845 152.559 131.762 149.753 140.757 140.757C149.772 131.743 152.559 120.845 153.155 108.544C153.77 97.9533 153.654 87.4397 153.654 76.83ZM76.8108 116.251C54.9955 116.251 37.3896 98.6452 37.3896 76.83C37.3896 55.0147 54.9955 37.4088 76.8108 37.4088C98.626 37.4088 116.232 55.0147 116.232 76.83C116.232 98.6452 98.626 116.251 76.8108 116.251ZM117.847 45.0009C112.753 45.0009 108.64 40.8877 108.64 35.7943C108.64 30.7008 112.753 26.5876 117.847 26.5876C122.94 26.5876 127.053 30.7008 127.053 35.7943C127.055 37.0037 126.818 38.2016 126.355 39.3193C125.893 40.437 125.215 41.4525 124.36 42.3077C123.505 43.1629 122.489 43.841 121.372 44.3032C120.254 44.7653 119.056 45.0024 117.847 45.0009Z"
+                fill="white"
+              />
+            </svg>
+          </SocialCard>
+        </div>
+        <div class="social-card fb">
+          <SocialCard social="FACEBOOK">
+            <svg viewBox="0 0 83 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M76.902 86.429L81.1709 58.6213H54.4869V40.5758C54.4869 32.9697 58.2131 25.5508 70.165 25.5508H82.2945V1.87753C82.2945 1.87753 71.2886 0 60.7629 0C38.7895 0 24.4271 13.3204 24.4271 37.4306V58.6261H0V86.4338H24.4271V153.66H54.4869V86.4338L76.902 86.429Z"
+                fill="white"
+              />
+            </svg>
+          </SocialCard>
+        </div>
+        <div class="social-card tt">
+          <SocialCard social="TIKTOK">
+            <svg viewBox="0 0 135 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M134.448 63.0136C121.231 63.0452 108.34 58.9236 97.5929 51.231V104.882C97.5892 114.818 94.552 124.517 88.8875 132.681C83.2229 140.845 75.2009 147.085 65.8942 150.566C56.5875 154.048 46.4396 154.606 36.8075 152.164C27.1755 149.723 18.5183 144.399 11.9936 136.905C5.46885 129.41 1.38762 120.103 0.295607 110.226C-0.79641 100.35 1.15283 90.3753 5.88268 81.6365C10.6125 72.8977 17.8976 65.8112 26.7636 61.3246C35.6297 56.8379 45.6542 55.165 55.4968 56.5294V83.5138C50.9928 82.097 46.1563 82.1397 41.6781 83.6357C37.1998 85.1317 33.3088 88.0044 30.5606 91.8437C27.8124 95.683 26.3476 100.293 26.3754 105.014C26.4032 109.735 27.9222 114.327 30.7154 118.134C33.5086 121.941 37.4333 124.767 41.9289 126.21C46.4244 127.654 51.261 127.639 55.748 126.17C60.235 124.7 64.1428 121.85 66.9135 118.027C69.6842 114.204 71.176 109.603 71.1759 104.882V0H97.5929C97.5742 2.23087 97.7611 4.45871 98.1512 6.65528C99.0692 11.5589 100.978 16.2237 103.76 20.3643C106.543 24.505 110.141 28.0344 114.335 30.7368C120.301 34.6816 127.295 36.7842 134.448 36.7827V63.0136Z"
+                fill="white"
+              />
+            </svg>
+          </SocialCard>
+        </div>
+        <!-- <a
           class="social-card social-card--instagram"
           href="https://www.instagram.com/"
           target="_blank"
@@ -68,8 +99,7 @@ import NewsletterForm from "./NewsletterForm.astro";
             />
           </svg>
           <span>FACEBOOK <span aria-hidden="true">→</span></span>
-        </a>
-        
+        </a> -->
       </nav>
     </div>
   </div>
@@ -79,7 +109,8 @@ import NewsletterForm from "./NewsletterForm.astro";
   .newsletter {
     min-height: 100vh;
     padding: clamp(3rem, 8vw, 7.5rem) var(--space-24);
-    overflow: hidden;
+    margin-bottom: var(--space-40);
+    /* overflow: hidden; */
     background: var(--color-base-black);
     color: var(--color-base-white);
   }
@@ -143,7 +174,7 @@ import NewsletterForm from "./NewsletterForm.astro";
   .social-card {
     position: absolute;
     display: flex;
-    width: clamp(9.5rem, 18vw, 13rem);
+    /* width: clamp(9.5rem, 18vw, 13rem);
     aspect-ratio: 1 / 1.08;
     flex-direction: column;
     align-items: center;
@@ -152,7 +183,7 @@ import NewsletterForm from "./NewsletterForm.astro";
     padding: 1rem;
     border-radius: var(--radius-xl);
     background: var(--color-gradient-violet);
-    color: var(--color-base-white);
+    color: var(--color-base-white); */
     transition: transform 200ms ease;
   }
 
@@ -161,8 +192,8 @@ import NewsletterForm from "./NewsletterForm.astro";
   }
 
   .social-card svg {
-    width: 62%;
-    height: auto;
+    /* width: 62%;
+    height: auto; */
   }
 
   .social-card > span {
@@ -173,22 +204,24 @@ import NewsletterForm from "./NewsletterForm.astro";
     white-space: nowrap;
   }
 
-  .social-card--instagram {
-    top: 0;
-    right: 12%;
-    transform: rotate(-13deg);
+  .ig {
+    transform: rotate(-5deg);
+    right: 80;
+    top: -20;
+    z-index: 2;
   }
 
-  .social-card--facebook {
-    top: 36%;
-    right: 0;
-    transform: rotate(-7deg);
+  .fb {
+    transform: rotate(8deg);
+    right: -15;
+    top: 190;
+    z-index: 1;
   }
 
-  .social-card--tiktok {
-    top: 48%;
-    left: 3%;
+  .tt {
     transform: rotate(-10deg);
+    top: 370;
+    right: 150;
   }
 
   @media (max-width: 1023px) {
@@ -209,18 +242,22 @@ import NewsletterForm from "./NewsletterForm.astro";
       width: clamp(10rem, 27vw, 15rem);
     }
 
-    .social-card--instagram {
-      top: 0;
-      right: 12%;
+    .ig {
+      transform: rotate(-5deg);
+      right: 70;
+      z-index: 2;
     }
 
-    .social-card--facebook {
-      top: 45%;
-      right: 3%;
+    .fb {
+      transform: rotate(8deg);
+      right: -15;
+      top: 190;
+      z-index: 1;
     }
 
-    .social-card--tiktok {
-      display: none;
+    .tt {
+      transform: rotate(-10deg);
+      top: 370;
     }
   }
 
@@ -256,7 +293,7 @@ import NewsletterForm from "./NewsletterForm.astro";
     }
 
     .newsletter__socials {
-      display: grid;
+      /* display: grid; */
       min-height: 0;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.5rem;
@@ -268,22 +305,28 @@ import NewsletterForm from "./NewsletterForm.astro";
       top: auto;
       right: auto;
       left: auto;
-      width: 100%;
-      max-width: 13rem;
+      /* width: 100%; */
+      /* max-width: 13rem; */
       justify-self: center;
-      aspect-ratio: 1 / 1.08;
+      /* aspect-ratio: 1 / 1.08; */
     }
 
-    .social-card--instagram {
+    .ig {
+      transform: rotate(-5deg);
+      right: 0;
+      z-index: 2;
+    }
+
+    .fb {
+      transform: rotate(8deg);
+      right: -80;
+      top: -20;
+      z-index: 1;
+    }
+
+    .tt {
       transform: rotate(-10deg);
-    }
-
-    .social-card--facebook {
-      transform: rotate(5deg);
-    }
-
-    .social-card--tiktok {
-      display: none;
+      top: -40;
     }
 
     .social-card > span {
