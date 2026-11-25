@@ -21,29 +21,29 @@
   --font-family-regular: "Roboto", sans-serif;
 
   /* Font size */
-  --display-large-size: 72px;
-  --display-medium-size: 56px;
-  --display-medium-size: 48px;
+  --display-large-size: clamp(2.5rem, 1.7rem + 3.5vw, 4.5rem);
+  --display-medium-size: clamp(2.25rem, 1.65rem + 2.6vw, 3.5rem);
+  --display-small-size: clamp(2rem, 1.6rem + 1.7vw, 3rem);
 
-  --headline-large-size: 40px;
-  --headline-medium-size: 32px;
-  --headline-small-size: 24px;
+  --headline-large-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --headline-medium-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --headline-small-size: clamp(1.25rem, 1.1rem + 0.65vw, 1.5rem);
 
-  --title-large-size: 24px;
-  --title-medium-size: 20px;
-  --title-small-size: 16px;
+  --title-large-size: clamp(1.25rem, 1.1rem + 0.65vw, 1.5rem);
+  --title-medium-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --title-small-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
 
-  --label-large-size: 18px;
-  --label-medium-size: 16px;
-  --label-small-size: 14px;
+  --label-large-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --label-medium-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --label-small-size: clamp(0.8125rem, 0.78rem + 0.12vw, 0.875rem);
 
-  --body-large-size: 16px;
-  --body-medium-size: 14px;
-  --body-small-size: 12px;
+  --body-large-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --body-medium-size: clamp(0.8125rem, 0.78rem + 0.12vw, 0.875rem);
+  --body-small-size: clamp(0.75rem, 0.73rem + 0.06vw, 0.75rem);
 
-  --caption-large-size: 12px;
-  --caption-medium-size: 10px;
-  --caption-small-size: 8px;
+  --caption-large-size: 0.75rem; /* 12px */
+  --caption-medium-size: 0.625rem; /* 10px */
+  --caption-small-size: 0.5rem; /* 8px */
 
   /* Font weight  */
   --font-weight-extrabold: 700;

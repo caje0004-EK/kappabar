@@ -4,20 +4,22 @@ import Button from "../components/buttons.astro";
 const { img, imgText, emne, titel, text, buttonText, buttonText2 } = Astro.props;
 ---
 
-<section class="container col-content-center grid">
-  <div class="col-12 col-md-6">
-    <Image src={img} alt={imgText} class="rounded-xl" />
-  </div>
-
-  <div class="content col-12 col-md-6 col-content-center">
-    <div>
-      <p class="headline-sm text-primary">{emne}</p>
-      <h1 class="display-md text-primary">{titel}</h1>
+<section class="container">
+  <div class="grid gap-xxl">
+    <div class="img col-12 col-md-6">
+      <Image src={img} alt={imgText} class="rounded-xl" />
     </div>
-    <p class="text-primary">{text}</p>
-    <div class="buttons">
-      {buttonText && <Button href="#">{buttonText}</Button>}
-      {buttonText2 && <Button href="#">{buttonText2}</Button>}
+
+    <div class="content col-12 col-md-6 col-content-center">
+      <div>
+        <p class="headline-sm text-primary">{emne}</p>
+        <h1 class="display-md text-primary">{titel}</h1>
+      </div>
+      <p class="text-primary">{text}</p>
+      <div class="buttons">
+        {buttonText && <Button href="#">{buttonText}</Button>}
+        {buttonText2 && <Button href="#">{buttonText2}</Button>}
+      </div>
     </div>
   </div>
 </section>
@@ -26,6 +28,7 @@ const { img, imgText, emne, titel, text, buttonText, buttonText2 } = Astro.props
   section {
     gap: var(--space-72);
     place-self: center;
+    margin: 3rem clamp(1.25rem, 8.5vw, 2.75rem) 4rem;
   }
 
   .buttons {
@@ -40,5 +43,10 @@ const { img, imgText, emne, titel, text, buttonText, buttonText2 } = Astro.props
     flex-direction: column;
     gap: var(--space-32);
     justify-content: center;
+  }
+
+  .img {
+    width: 100%;
+    height: auto;
   }
 </style>
