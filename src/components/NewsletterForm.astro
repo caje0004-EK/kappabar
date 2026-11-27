@@ -1,24 +1,12 @@
 <form class="newsletter__form" method="post">
   <label class="newsletter__field">
     <span class="visually-hidden">Fornavn</span>
-    <input
-      name="firstName"
-      type="text"
-      autocomplete="given-name"
-      placeholder="Fornavn"
-      required
-    />
+    <input name="firstName" type="text" autocomplete="given-name" placeholder="Fornavn" required />
   </label>
 
   <label class="newsletter__field">
     <span class="visually-hidden">E-mail</span>
-    <input
-      name="email"
-      type="email"
-      autocomplete="email"
-      placeholder="E-Mail"
-      required
-    />
+    <input name="email" type="email" autocomplete="email" placeholder="E-Mail" required />
   </label>
 
   <label class="newsletter__consent">
@@ -75,6 +63,11 @@
     outline-offset: 2px;
   }
 
+  .newsletter__field input:focus-visible {
+    outline: 3px solid var(--color-violet-300);
+    outline-offset: 2px;
+  }
+
   .newsletter__consent {
     display: flex;
     align-items: center;
@@ -105,7 +98,9 @@
     font-size: 1.25rem;
     font-weight: var(--font-weight-bold);
     cursor: pointer;
-    transition: background-color 180ms ease, color 180ms ease;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease;
   }
 
   .newsletter__form button:hover {
